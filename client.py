@@ -13,8 +13,6 @@ client_socket.connect((HOST, PORT))
 
 # Wrap the socket with TLS
 context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
-context.check_hostname = False
-context.verify_mode = ssl.CERT_NONE
 ssl_connection = context.wrap_socket(client_socket)
 print(ssl_connection.cipher)
 # Send data to the server
